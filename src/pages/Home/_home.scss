@@ -5,16 +5,15 @@
     margin-right: 10%;
     border-bottom: 2px solid gray;
   }
-  .search-filter {
+  .search-filter{
     width: 90%;
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-    flex-direction: row;
-    height: 30px;
 
-    input#numberOfPodcast {
-      margin-right: 10px;
+    input#SearchPodcasts {
+      margin-left: 90%;
+      height: 30px;
+    }
+    input#SearchChip {
+      margin-left: 80%;
       padding-left: 10px;
       border-radius: 10px;
       background-color: rgb(0, 157, 255);
@@ -23,8 +22,10 @@
       font-size: 20px;
       font-weight: bold;
       width: 50px;
-    }
   }
+  }
+    
+  
 
   .Podcasts{
       display: grid;

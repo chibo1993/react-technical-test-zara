@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ListOfPodcast from '../../components/ListOfPodcast';
 import SearchFilter from '../../components/SearchFilter'
 import getPodcastList from '../../services/getPodcastList'
+import SearchChip from '../../components/SearchChip'
 
 export default function Home() {
   const [podcasts, setPodcasts] = useState([]);
@@ -19,9 +20,12 @@ export default function Home() {
         {
           <section className="App-header">
             <h1>Podcaster</h1>
-            <div className='search-filter'>
-              <SearchFilter /> 
-            </div>
+              <div className='search-filter'>
+               <SearchChip 
+                numberOfPodcast={podcasts.length}
+               />
+                <SearchFilter /> 
+              </div>
             <div className='Podcasts'>
               <ListOfPodcast  
                 podcasts={podcasts}
