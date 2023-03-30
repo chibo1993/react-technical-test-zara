@@ -23,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header .content-podcast {
+  background-color: black !important;
+}
 
 .App-link {
   color: #61dafb;
