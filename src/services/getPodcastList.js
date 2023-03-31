@@ -20,12 +20,11 @@ export default async function getPodcastList() {
     }
     const podcasts = data.map(podcast => {
       const title = podcast.title.label.toUpperCase()
-      const summary = podcast.summary
       const image = podcast['im:image'][2].label
       const author = podcast['im:artist'].label.toUpperCase()
-      const id = podcast['id'].label
+      const id = podcast['id'].attributes['im:id']
       
-      return {title, summary, image, author, id}
+      return {title, image, author, id}
     })
     return podcasts; // si es mayor de 24 horas devuelvo promesa  // localstore tengo guradado [{}].
 }

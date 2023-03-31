@@ -1,5 +1,5 @@
 import React from 'react'
-import '../pages/Home/_home.scss'
+import '../../pages/Home/_home.scss'
 
 export default function Podcasts ({title, summary, image, author}) {
     return <div className='content-podcast'>

@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import ListOfPodcast from '../../components/ListOfPodcast';
+import ListOfPodcast from '../../components/Podcast/ListPodcast/index';
 import { Provider } from 'react-redux'
-import SearchFilter from '../../components/SearchFilter'
-import SearchChip from '../../components/SearchChip'
+import SearchFilter from '../../components/Searchers/SearcherFIlter'
+import SearchChip from '../../components/Searchers/SearcherChip'
 import useFetchPodcastList from '../../hooks/useFetchPodcastList';
 import store from '../../store'
+
+import { Link, Route } from "wouter";
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
@@ -27,10 +29,16 @@ export default function Home() {
                 /> 
               </div>
             <div className='Podcasts__container'>
-              <ListOfPodcast  
-                keyword={keyword}
-                onGetPodcastLength={5}
-              />
+            <Link
+            key={5555}
+            to={`podcast/${555}`}
+          >
+                <ListOfPodcast  
+                  keyword={keyword}
+                  onGetPodcastLength={5}
+                />
+                </Link>
+                
             </div>
           </section>
         </Provider>
