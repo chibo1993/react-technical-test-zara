@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import ListOfPodcast from '../../components/ListOfPodcast';
 import SearchFilter from '../../components/SearchFilter'
-import getPodcastList from '../../services/getPodcastList'
 import SearchChip from '../../components/SearchChip'
+import useFetchPodcastList from '../../hooks/useFetchPodcastList';
 
 export default function Home() {
-  const [podcasts, setPodcasts] = useState([])
+ 
+  const dataPodcastList = useFetchPodcastList();
   const [keyword, setKeyword] = useState('')
   console.log(document.getElementById('SearchPodcasts'));
 
@@ -13,14 +14,6 @@ export default function Home() {
     console.log('evt', evt)
     setKeyword(evt);
   }
-    //Dentro del useEffect añadiriamos el fetch.
-    useEffect(function () {
-        getPodcastList()
-       .then(podcasts =>
-        setPodcasts(podcasts)
-        );
-      //setGifs(DIFFGIFS)
-    }, [])
     return (
         <>
         {
@@ -28,7 +21,7 @@ export default function Home() {
             <h1>Podcaster</h1>
               <div className='header__searcher__container'>
                <SearchChip 
-                numberOfPodcast={podcasts.length}
+                numberOfPodcast={dataPodcastList.length}
                />
                 <SearchFilter 
                   keyword={keyword}
@@ -37,7 +30,7 @@ export default function Home() {
               </div>
             <div className='Podcasts__container'>
               <ListOfPodcast  
-                podcasts={podcasts}
+                podcasts={dataPodcastList}
               />
             </div>
           </section>
