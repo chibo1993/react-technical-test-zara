@@ -5,8 +5,14 @@ import getPodcastList from '../../services/getPodcastList'
 import SearchChip from '../../components/SearchChip'
 
 export default function Home() {
-  const [podcasts, setPodcasts] = useState([]);
+  const [podcasts, setPodcasts] = useState([])
+  const [keyword, setKeyword] = useState('')
+  console.log(document.getElementById('SearchPodcasts'));
 
+  const onSearcherhandlerChange = evt => {   
+    console.log('evt', evt)
+    setKeyword(evt);
+  }
     //Dentro del useEffect añadiriamos el fetch.
     useEffect(function () {
         getPodcastList()
@@ -20,13 +26,16 @@ export default function Home() {
         {
           <section className="App-header">
             <h1>Podcaster</h1>
-              <div className='search-filter'>
+              <div className='header__searcher__container'>
                <SearchChip 
                 numberOfPodcast={podcasts.length}
                />
-                <SearchFilter /> 
+                <SearchFilter 
+                  keyword={keyword}
+                  onSearcher={onSearcherhandlerChange}  
+                /> 
               </div>
-            <div className='Podcasts'>
+            <div className='Podcasts__container'>
               <ListOfPodcast  
                 podcasts={podcasts}
               />
