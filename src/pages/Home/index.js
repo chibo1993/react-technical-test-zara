@@ -10,7 +10,7 @@ import { Link, Route } from "wouter";
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
-    
+  const dataPodcast = useFetchPodcastList()
   //let dataPodcastList = useFetchPodcastList();
   const onSearcherhandlerChange = evt => {   
     setKeyword(evt);
@@ -21,7 +21,7 @@ export default function Home() {
             <h1>Podcaster</h1>
               <div className='header__searcher__container'>
                <SearchChip 
-                numberOfPodcast={5}
+                numberOfPodcast={dataPodcast.length}
                />
                 <SearchFilter 
                   keyword={keyword}
@@ -35,7 +35,6 @@ export default function Home() {
           >
                 <ListOfPodcast  
                   keyword={keyword}
-                  onGetPodcastLength={5}
                 />
                 </Link>
                 
