@@ -11,6 +11,5 @@ export default function useFetchPodcastList({keyword} = {keyword: ''}) {
           setPodcasts(pod.filter(pod => pod.title.includes(keyword.toUpperCase())))
         );
     }, [keyword])
-    console.log('hola', Podcasts);
     return podcasts;
 }

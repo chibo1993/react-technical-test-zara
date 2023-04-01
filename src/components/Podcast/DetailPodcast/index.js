@@ -5,7 +5,7 @@ export default function DetailsPodcast ({detailsPodcast}) {
          <div className="content_podcasts_values">
          <p>{artistName} <br />
       by </p>
-      <img src={artworkUrl160} />
+      <img src={artworkUrl160} alt="artwork"/>
       <p>{trackName}</p>
       <p>{description}</p>
       <p>{artistName}</p>

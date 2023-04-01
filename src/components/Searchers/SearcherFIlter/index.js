@@ -6,9 +6,7 @@ const Searcher = ({onSearcher}) => {
         onSearcher(e.target.value)
     }
     return (
-    <>
-         <input id="SearchPodcasts" type="text" onChange={inputSearcherHandler} size={35} height={20} placeholder="Filter podcasts..."/>
-    </>
+         <input className="SearchPodcasts" type="text" onChange={inputSearcherHandler} size={35} height={20} placeholder="Filter podcasts..."/>
     );
 }
 Searcher.prototype = {

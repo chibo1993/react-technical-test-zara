@@ -14,7 +14,7 @@ export default function Home() {
   }
     return (
       <>
-          <section className="App-header">
+          <section className="main_content">
             <Header />
               <div className='header__searcher__container'>
                <SearchChip 
