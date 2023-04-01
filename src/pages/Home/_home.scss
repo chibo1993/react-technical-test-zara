@@ -1,4 +1,9 @@
 .App-header {
+
+  a:link, a:visited, a:active {
+      text-decoration:none;
+      color: #000;
+  }
   h1 {
     color: rgb(0, 157, 255);
     margin-left: 10%;

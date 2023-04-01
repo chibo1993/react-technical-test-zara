@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 const Searcher = ({onSearcher}) => {
     const inputSearcherHandler = (e) => {
-        console.log(e.target.value)
         onSearcher(e.target.value)
     }
     return (
