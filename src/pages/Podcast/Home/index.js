@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
-import ListOfPodcast from '../../components/Podcast/ListPodcast/index';
-import SearchFilter from '../../components/Searchers/SearcherFIlter'
-import SearchChip from '../../components/Searchers/SearcherChip'
-import Header from '../../components/Header/index';
+import ListOfPodcast from '../../../components/Podcast/ListPodcast/index';
+import SearchFilter from '../../../components/Searchers/SearcherFIlter'
+import SearchChip from '../../../components/Searchers/SearcherChip'
+import Header from '../../../components/Header/index';
+import useFetchPodcastList from '../../../hooks/useFetchPodcastList';
 
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
+  const podcastList = useFetchPodcastList({keyword});
   const onSearcherhandlerChange = evt => {   
     setKeyword(evt);
   }
@@ -16,7 +18,7 @@ export default function Home() {
             <Header />
               <div className='header__searcher__container'>
                <SearchChip 
-                numberOfPodcast={100}
+                numberOfPodcast={podcastList.length}
                />
                 <SearchFilter 
                   keyword={keyword}
@@ -24,8 +26,8 @@ export default function Home() {
                 /> 
               </div>
             <div className='Podcasts__container'>
-                <ListOfPodcast  
-                  keyword={keyword}
+                <ListOfPodcast
+                  podcastList={podcastList}
                 />
             </div>
           </section>

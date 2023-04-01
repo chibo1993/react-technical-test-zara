@@ -6,14 +6,9 @@ import  {Link } from 'react-router-dom'
 
 
 
-export default function ListOfPodcast ({keyword}) {
-
-    const [loading, setLoading] = useState(false)
-    const dataPodcast = useFetchPodcastList({keyword});
-    if (loading) return <Spinner />
-    return dataPodcast.map(({ title, summary, image, author, id}) => 
-    <>
-        {
+export default function ListOfPodcast ({podcastList}) {
+    if (!podcastList) return null; 
+    return podcastList.map(({ title, summary, image, author, id}) => 
                 <Link
                     key={id}
                     to={`/podcast/${id}`}
@@ -27,7 +22,5 @@ export default function ListOfPodcast ({keyword}) {
                         author={author}
                     />
                 </Link>
-        }
-    </>
     )
 }

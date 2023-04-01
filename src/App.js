@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppContext } from "./components/context/AppContext";
 import Header from '../src/components/Header/index';
-import Home from "./pages/Home";
-import DetailsPodcast from "./pages/Detail";
+import Home from "./pages/Podcast/Home";
+import DetailsPodcast from "./pages/Podcast/Detail/index";
 
 function App() { 
     const [loading, setLoading] = useState(false);
