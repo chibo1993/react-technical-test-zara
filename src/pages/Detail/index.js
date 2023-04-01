@@ -1,6 +1,14 @@
-import getPodcastDetails from "../../services/getPodcastDetails";
+import useFetchPodcastDetail from "../../hooks/useFetchPodcastDetail";
 
 export default function DetailsPodcast() {
-   const id = '1678378239'
-return getPodcastDetails({id});
+   console.log('entra', useFetchPodcastDetail());
+   const detailsPodcast = useFetchPodcastDetail()
+   console.log('detailsPodcast', detailsPodcast)
+return detailsPodcast.map(({country}) =>
+   <>
+   {
+   <p>{country}</p>
+   }
+   </>
+   )
 }
