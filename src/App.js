@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppContext } from "./components/context/AppContext";
-import Header from '../src/components/Header/index';
 import Home from "./pages/Podcast/Home";
 import DetailsPodcast from "./pages/Podcast/Detail/index";
 import EpisodePodcast from "./pages/Podcast/Episode/index"

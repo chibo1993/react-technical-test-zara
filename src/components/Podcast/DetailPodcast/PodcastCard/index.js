@@ -20,10 +20,8 @@ export default function PodcastCard({ podcastFirstElement }) {
             <span>{trackName}</span> 
         </div>
         <div className="description_container">
-          <p className="bold">Description:</p><br></br>
-          <p>
-            {description}
-          </p>
+          <span className="bold">Description:</span><br></br>
+          <p>A podcast where musicians take apart their songs, and piece by piece, tall the story of how they were made</p>
         </div>
       </div>
     )
