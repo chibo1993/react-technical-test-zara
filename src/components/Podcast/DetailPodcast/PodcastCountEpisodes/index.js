@@ -1,5 +1,5 @@
-export default function PodcastCountEpisodes({ podcastEpisodes }) {
+export default function PodcastCountEpisodes({ podcastEpisodesLenght }) {
   return (
-    <div className="count_episodes_container">Episodes: {podcastEpisodes}</div>
+    <div className="count_episodes_container"><span> Episodes: {podcastEpisodesLenght}</span></div>
   );
 }

@@ -1,16 +1,17 @@
 import PodcastCard from "../DetailPodcast/PodcastCard/index";
-import PodcastCountEpisodes from '../DetailPodcast/PodcastCountEpisodes/index'
-export default function DetailsPodcast({ detailsPodcast }) {
-    console.log('hola', detailsPodcast)
+import PodcastCountEpisodes from "../DetailPodcast/PodcastCountEpisodes/index";
+import PodcastEpisodes from "../DetailPodcast/PodcastEpisodes/index";
+
+export default function DetailsPodcast({ detailsPodcast, episodesPodcast }) {
   return (
     <div className="information_podcast_conatiner">
-      <PodcastCard podcastFirstElement={[detailsPodcast[0]]} />
-      <PodcastCountEpisodes podcastEpisodes={detailsPodcast.length-1}/>
+      <div className="podcast_cart_container">
+        <PodcastCard podcastFirstElement={[detailsPodcast]} />
+      </div>
+      <div className="podcast_episodes_container">
+        <PodcastCountEpisodes podcastEpisodesLenght={episodesPodcast.length} />
+        <PodcastEpisodes episodesPodcast={episodesPodcast} />
+      </div>
     </div>
   );
-  //<div padre>
-  // componente coutn episode
-  // componente card
-  // componente lista de episodios
-  //</div>
 }

@@ -4,8 +4,8 @@ import SearchFilter from '../../../components/Searchers/SearcherFIlter'
 import SearchChip from '../../../components/Searchers/SearcherChip'
 import Header from '../../../components/Header/index';
 import useFetchPodcastList from '../../../hooks/useFetchPodcastList';
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchPodcastList, getPodcastList } from '../../../store/podcast/slice'
+import { useDispatch } from 'react-redux'
+import { fetchPodcastList } from '../../../store/podcast/slice'
 
 export default function Home() {
 
