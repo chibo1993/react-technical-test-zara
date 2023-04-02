@@ -5,6 +5,8 @@ import { AppContext } from "./components/context/AppContext";
 import Header from '../src/components/Header/index';
 import Home from "./pages/Podcast/Home";
 import DetailsPodcast from "./pages/Podcast/Detail/index";
+import {Provider} from "react-redux"
+import store from "./store"
 
 function App() { 
     const [loading, setLoading] = useState(false);
@@ -13,7 +15,7 @@ function App() {
     setLoading,
   };
   return (
-    <>
+    <Provider store={store} >
     <div className="App">
     <AppContext.Provider value={value}>
         <Routes>
@@ -22,7 +24,7 @@ function App() {
         </Routes>
       </AppContext.Provider>
     </div>
-    </>
+    </Provider>
   );
 }
 

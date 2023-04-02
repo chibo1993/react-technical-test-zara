@@ -1,0 +1,31 @@
+.information_podcast_conatiner {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10%;
+
+  .content_podcast_card_value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    .img_container {
+        padding-left: 10%;
+        border-bottom: 2px solid gray;
+        width: 70%;
+    }
+    .trackname_container {
+        border-bottom: 2px solid gray;
+        width: 90%;
+    }
+    .description_container {
+    }
+    .bold {
+        font-weight: bold;
+    }
+    img {
+        margin-top: 10%;
+    }
+  }
+  .count_episodes_container {}
+}

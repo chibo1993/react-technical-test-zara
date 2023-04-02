@@ -1,17 +1,16 @@
-export default function DetailsPodcast ({detailsPodcast}) {
-    return detailsPodcast.map(({artistName, artworkUrl160, trackName, description, trackId}) =>
-
-      <div className='content__details__podcast'>
-         <div className="content_podcasts_values">
-         <p>{artistName} <br />
-      by </p>
-      <img src={artworkUrl160} alt="artwork"/>
-      <p>{trackName}</p>
-      <p>{description}</p>
-      <p>{artistName}</p>
-      <p>{artistName}</p>
-         </div>
-      
-   </div>
-   )
+import PodcastCard from "../DetailPodcast/PodcastCard/index";
+import PodcastCountEpisodes from '../DetailPodcast/PodcastCountEpisodes/index'
+export default function DetailsPodcast({ detailsPodcast }) {
+    console.log('hola', detailsPodcast)
+  return (
+    <div className="information_podcast_conatiner">
+      <PodcastCard podcastFirstElement={[detailsPodcast[0]]} />
+      <PodcastCountEpisodes podcastEpisodes={detailsPodcast.length-1}/>
+    </div>
+  );
+  //<div padre>
+  // componente coutn episode
+  // componente card
+  // componente lista de episodios
+  //</div>
 }
