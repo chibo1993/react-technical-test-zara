@@ -69,6 +69,9 @@
       }
       th,
       td {
+        a {
+            color: #3366BB;
+        }
         padding: 0.5rem;
         border-bottom: 1px solid lightgray;
         background-color: rgba(255, 255, 255, 0.2);
@@ -88,4 +91,21 @@
     }
     box-shadow: -2px 2px 2px 2px rgb(195, 195, 195);
   }
+}
+//animations
+.information_podcast_conatiner > div {
+    img {
+        transition-delay: 0.2s;
+        transition-duration: 0s;
+    }
+     transition-duration: 0.2s;
+     filter: blur(0px);
+     opacity: 1;
+}
+.--loading .information_podcast_conatiner > div {
+    filter: blur(10px);
+    opacity: 0.2;
+    img {
+        opacity: 0;
+    }
 }

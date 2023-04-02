@@ -3,7 +3,7 @@ import  {Link } from 'react-router-dom'
 
 export default function ListOfPodcast ({podcastList}) {
     if (!podcastList) return null; 
-    return podcastList.map(({ title, summary, image, author, id}) => 
+    return podcastList.map(({ title, description, image, author, id}) => 
                 <Link
                     key={id}
                     to={`/podcast/${id}`}
@@ -12,7 +12,7 @@ export default function ListOfPodcast ({podcastList}) {
                         key={id}
                         id={id}
                         title={title}
-                        summary={summary}
+                        description={description}
                         image={image}
                         author={author}
                     />

@@ -45,7 +45,6 @@ function Table({ episodesPodcast }) {
       columns,
       data,
     });
-  console.log("COMPONENT", headerGroups);
   return (
     <div className="table-container">
       <table {...getTableProps()}>

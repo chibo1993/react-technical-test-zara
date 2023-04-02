@@ -9,6 +9,5 @@ export default function useFetchPodcastDetail() {
     useEffect(function () {
         setPodcastsDetails(dataDetailPodcast)
     }, [dataDetailPodcast])
-    console.log('hihi', podcastsDetails)
     return podcastsDetails;
 }

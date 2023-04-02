@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/podcast/:podcastId" element={<DetailsPodcast />} />
-          <Route path="/podcast/{podcastId}/episode/{episodeId}" element={<EpisodePodcast />} />
+          <Route path="/podcast/:podcastId/episode/:episodeId" element={<EpisodePodcast />} />
         </Routes>
       </AppContext.Provider>
     </div>
