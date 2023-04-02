@@ -2,10 +2,10 @@ export default function PodcastCard({ podcastFirstElement }) {
   console.log("podcastFirstElement111", podcastFirstElement);
   if (!podcastFirstElement) return null
   return podcastFirstElement.map(
-    ({ artistName, description, artworkUrl100, trackName }) => (
+    ({ artistName, description, artworkUrl600, trackName }) => (
       <div className="content_podcast_card_value">
         <div className="img_container">
-          <img src={artworkUrl100} alt="artwork" />
+          <img src={artworkUrl600} alt="artwork" />
         </div>
         <div className="trackname_container">
           <p className="bold">
