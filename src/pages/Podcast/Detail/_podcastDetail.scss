@@ -63,6 +63,7 @@
       border-spacing: 0;
       border-collapse: collapse;
       overflow: hidden;
+      tr:nth-child(even) { background: rgb(239, 238, 238) }
       tr {
         :last-child {
           td {
