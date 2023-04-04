@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/30491359/229782428-f839fdc4-17da-47b1-a9bb-39a69f311dab.png)
+
+
 # React-technical-test-zara
 
 This project is a podcast website, you will be able to search, see information about your favourite podcasts and listen to them. 
