@@ -10,7 +10,6 @@ export const podcastSlice = createSlice({
     podcastList: [],
     podcastDetailList: [],
     podcastEpisodesList: [],
-    podcastDescription: '',
     lastUpdate: null,
     isLoading: false,
   },
@@ -29,9 +28,6 @@ export const podcastSlice = createSlice({
     setIsLoading: (state, actions) => {
       state.isLoading = actions.payload;
     },
-    setPodcastDescription: (state, actions) => {
-      state.podcastDescription = actions.payload;
-    },
   },
 });
 //selector
@@ -41,7 +37,6 @@ export const getPodcastDetailsList = (state) => state.podcast.podcastDetailList;
 export const getPodcastEpisodesList = (state) =>
   state.podcast.podcastEpisodesList;
 export const getIsLoading = (state) => state.podcast.isLoading;
-export const getPodcastDescription = (state) => state.podcast.podcastDescription;
 // Action creators are generated for each case reducer function
 
 export const {
@@ -49,16 +44,12 @@ export const {
   setPodcastDetailsList,
   setPodcastEpisodesList,
   setIsLoading,
-  setPodcastDescription,
 } = podcastSlice.actions;
 
 export const fetchPodcastList = () => (dispatch, getState) => {
   //decidir si tengo que llamar.
   if (getLastUpdate(getState())) {
-
-  console.log('hola', getLastUpdate(getState()))
     const parseDate = new Date(JSON.parse(getLastUpdate(getState())))
-    console.log('hola', parseDate)
     const difference =
       new Date().getMilliseconds - parseDate.getMilliseconds;
     if (difference < 1000 * 60 * 60 * 24) return null;
@@ -93,8 +84,7 @@ export const fetchPodcastDetailsList = (podcastId) => (dispatch, getState) => {
     .then((podcastDetails) => {
       const firstElement = podcastDetails.shift();
       const podcastListFilter = getState().podcast.podcastList.find(pod => pod.id === `${firstElement.trackId}`)
-      dispatch(setPodcastDescription(podcastListFilter.description));
-      dispatch(setPodcastDetailsList(firstElement));
+      dispatch(setPodcastDetailsList({...firstElement, description: podcastListFilter.description}));
       dispatch(setPodcastEpisodesList(podcastDetails));
     })
     .finally(() => {

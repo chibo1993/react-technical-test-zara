@@ -1,17 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { getPodcastDescription } from "../../../../store/podcast/slice";
-import { useSelector } from "react-redux";
 
 export default function PodcastCard({ podcastFirstElement }) {
   const navigate = useNavigate();
   const backButton = () => {
     navigate(-1);
   };
-  const description = useSelector(getPodcastDescription)
+  //const description = useSelector(getPodcastDescription)
   if (!podcastFirstElement) return null
   return podcastFirstElement.map(
-    ({ artistName, artworkUrl600, trackName }) => (
-      <div className="content_podcast_card_value">
+    ({ artistName, artworkUrl600, trackName, description }, index) => (
+      <div key={index} className="content_podcast_card_value">
         <div className="img_container">
           <img onClick={backButton} src={artworkUrl600} alt="artwork" />
         </div>

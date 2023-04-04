@@ -1,9 +1,8 @@
-# TITLE
-
-React-technical-test-zara
-# Description
+# React-technical-test-zara
 
 This project is a podcast website, you will be able to search, see information about your favourite podcasts and listen to them. 
+
+
 
 # INSTALLATION
 
