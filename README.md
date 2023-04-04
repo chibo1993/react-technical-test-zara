@@ -1,5 +1,4 @@
-![image](https://user-images.githubusercontent.com/30491359/229782428-f839fdc4-17da-47b1-a9bb-39a69f311dab.png)
-
+![image](https://user-images.githubusercontent.com/30491359/229783164-80cc4fc1-db6d-4935-ba48-16190b402c61.png)
 
 # React-technical-test-zara
 
